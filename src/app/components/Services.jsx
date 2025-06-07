@@ -33,15 +33,7 @@ const Services = () => {
   ];
 
   return (
-    <section className="relative z-10 px-16 mt-[-470px]">
-        <div className='flex items-center justify-center w-full'>
-        <Image 
-        src='/blur.png'
-        alt='blur'
-        width={500}
-        height={500}
-        />
-        </div>
+    <section className="relative z-10 px-16 ">
       <h2 className="text-4xl font-normal text-center text-gray-300 leading-tight mb-8 font-lexend-deca">Meet hisabkitab
         <br />
         <span className="bg-[linear-gradient(0deg,#2A2355_0%,#FFFFFF_100%)] bg-clip-text text-transparent">

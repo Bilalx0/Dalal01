@@ -2,8 +2,9 @@
 
 import React, { useState } from 'react';
 import { Plus, Minus, HelpCircle } from 'lucide-react';
+import Image from 'next/image';
 
-const FAQ= () => {
+const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(6); // Second to last item is open by default
 
   const faqs = [
@@ -33,7 +34,8 @@ const FAQ= () => {
     },
     {
       question: "Can the AI Scheduling Assistant manage tasks as well?",
-      answer: "Yes, our AI Scheduling Assistant can manage various tasks including appointment scheduling, task prioritization, deadline reminders, and workflow automation to help streamline your business operations."
+      answer: "Yes, our AI Scheduling Assistant can manage various tasks including appointment scheduling, task prioritization, deadline reminders, and workflow automation to help streamline your business operations.",
+      isOpen: true
     },
     {
       question: "What are the pricing plans for the AI Scheduling Assistant?",
@@ -48,11 +50,23 @@ const FAQ= () => {
 
   return (
     <div className="min-h-screen p-8 relative overflow-hidden mt-24 px-16">
-      {/* Background blur effects */}
-      {/* <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-purple-400/20 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-blue-400/20 rounded-full blur-3xl"></div>
-      <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-pink-400/20 rounded-full blur-3xl"></div>
-       */}
+      
+      {/* Top Right Background Image or Decoration */}
+      <div 
+       className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 w-150 h-150 pointer-events-none"
+        style={{ transform: 'translate(25%, -25%)' }}
+      >
+        
+        <div 
+          className="w-full h-full bg-cover bg-center"
+          style={{ backgroundImage: "url('/glowingline.png')" }}
+        >
+          
+        </div>
+                
+      </div>
+
+      {/* Content Container */}
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Header Section */}
         <div className="text-center mb-12 ">
@@ -62,7 +76,12 @@ const FAQ= () => {
               <HelpCircle className="w-6 h-6 text-purple-300" />
             </div>
           </div>
-          
+<Image
+                  src="/rollshape.png" // Replace with your actual glow image
+                  alt="Glow Effect Left"
+                  width={100}
+                  height={100}
+                />
           <h1 className="text-4xl md:text-5xl font-semibold text-white mb-4 font-lexend-deca">
             Frequently Asked Question
           </h1>
@@ -101,6 +120,7 @@ const FAQ= () => {
                   )}
                 </div>
               </div>
+              
 
               {/* Answer */}
               <div className={`overflow-hidden transition-all duration-300 ${
@@ -113,6 +133,7 @@ const FAQ= () => {
             </div>
           ))}
         </div>
+        
       </div>
     </div>
   );
